@@ -1,0 +1,30 @@
+Aufgabe 2: 
+	Kevin: 	a) Java, C/C++
+			b) HTML, SQL, FBS, Python, XSLT
+			
+Aufgabe 3:
+	Pascal
+	FORTRAN
+	C
+	LaTeX
+	HTML
+	LISP
+	PROLOG
+	COBOL
+	
+Aufgabe 4:
+
+	i = 1;
+m1	if(i >= 10) 
+	{
+		goto end;
+	}
+m2	if(sum <= 50)
+	{
+		goto m3;
+	}
+	sum = sum + 1;
+	goto m2;
+	sum = 0;
+	++i;
+	goto m1;
