@@ -1,6 +1,6 @@
 Aufgabe 2: 
-	Kevin: 	a) Java, C/C++
-			b) HTML, SQL, FBS, Python, XSLT
+	Kevin: 	a) Java, C/C++, glsl
+			b) HTML, SQL, FBS, Python, XSLT, LaTeX, Assembler, Prolog
 
 	Valentin: 	a) Java, C/C++, C#, glsl
 			b) VB/VBA, HTML, Prolog, BASIC, SQL, Python, Delphi, LaTeX, Assembler
