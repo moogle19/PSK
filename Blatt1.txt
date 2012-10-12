@@ -25,6 +25,7 @@ m2	if(sum <= 50)
 	}
 	sum = sum + 1;
 	goto m2;
-	sum = 0;
+m3	sum = 0;
 	++i;
 	goto m1;
+end
