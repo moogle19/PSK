@@ -22,11 +22,11 @@ m1	if(i >= 10)
 	{
 		goto end;
 	}
-m2	if(sum <= 50)
+m2	if(sum >= 50)
 	{
 		goto m3;
 	}
-	sum = sum + 1;
+	sum = sum + i;
 	goto m2;
 m3	sum = 0;
 	++i;
