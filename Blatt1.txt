@@ -1,5 +1,5 @@
 Aufgabe 2: 
-	Kevin:	a) Java, C/C++, glsl
+	Kevin:		a) Java, C/C++, glsl
 			b) HTML, SQL, FBS, Python, XSLT, LaTeX, Assembler, Prolog
 
 	Valentin: 	a) Java, C/C++, C#, glsl
