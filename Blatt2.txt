@@ -69,13 +69,15 @@ Aufgabe 3:
 
 
 Aufgabe 4:
-  verl: Bekommt String und macht ihn l lang. Es werden führend nullen eingesetzt.
+  verl: Bekommt String und macht ihn l-lang. Es werden führend Nullen eingesetzt.
 
-  wasBinIch: 2 Strings werden verglichen. Er werden beide mit "verl" auf diie gleiche 
+  wasBinIch: 2 Strings werden verglichen. Er werden beide mit "verl" auf die gleiche 
              Laenge gebracht. Danach buchstabenweise verglichen.
-             Ich neuen String werden gleiche bzw. ungleiche Stellen geschrieben.
+             Im neuen String werden gleiche bzw. ungleiche Stellen geschrieben:
+             0 wenn die Ziffer gleich ist, 1 sonst. (Bitweise XOR Verknüpfung)
              
 
   main: Test ob args laenge stimmt. args eingabe wird in int ungewandelt. wasBinIch
         wird mit Integer.toBinaryString (Binaerdarstellung der Integer Zahlen) aufgerufen.
-        Zahl wird ausgegeben.
+        Die Zahl, also die Bitweise XOR-Verknüpfung der beiden eingegebenen Intgers, wird ausgegeben.
+        => Die Berechnung entspricht " a^b " bei zwei integer Eingaben a und b.
