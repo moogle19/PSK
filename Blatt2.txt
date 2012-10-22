@@ -1,3 +1,48 @@
+ARBEITSBLATT 2
+
+Valentin Bruder  	vbruder@uos.de		942067
+Kevin Seidel		  keseidel@uos.de		943147
+
+
+
+Aufgabe 1
+
+a) total
+b) total
+c) partiell: für alle {x | x € {-2*n}}, n € N^0
+
+
+
+Aufgabe 2
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int x = 1;
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Geben Sie ein int ein: ");
+        try {
+            x = Integer.valueOf(console.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        while (x != 5) {
+            System.out.println("Schleife");
+        }
+    }
+}
+
+=> keine Fehlermeldung/Warnung
+
+
+
 Aufgabe 3:
   Zustand:  geles.Symbol   neuer Zustand  Kopfbewegung
   
@@ -21,6 +66,8 @@ Aufgabe 3:
 
   S6
 
+
+
 Aufgabe 4:
   verl: Bekommt String und macht ihn l lang. Es werden führend nullen eingesetzt.
 
@@ -30,5 +77,5 @@ Aufgabe 4:
              
 
   main: Test ob args laenge stimmt. args eingabe wird in int ungewandelt. wasBinIch
-        wird mit Integer.toBinaryString aufgerufen.
+        wird mit Integer.toBinaryString (Binaerdarstellung der Integer Zahlen) aufgerufen.
         Zahl wird ausgegeben.
