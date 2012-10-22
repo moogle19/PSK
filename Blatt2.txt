@@ -1,0 +1,34 @@
+Aufgabe 3:
+  Zustand:  geles.Symbol   neuer Zustand  Kopfbewegung
+  
+  S0        0              S1             r
+  S0        1              S0             r
+
+  S1        0              S1             r
+  S1        1              S2             r
+
+  S2        0              S1             r
+  S2        1              S3             r
+
+  S3        0              S1             r
+  S3        1              S4             r
+
+  S4        0              S1             r
+  S4        1              S5             r
+
+  S5        0              S6             lll
+  S5        1              S0             r
+
+  S6
+
+Aufgabe 4:
+  verl: Bekommt String und macht ihn l lang. Es werden führend nullen eingesetzt.
+
+  wasBinIch: 2 Strings werden verglichen. Er werden beide mit "verl" auf diie gleiche 
+             Laenge gebracht. Danach buchstabenweise verglichen.
+             Ich neuen String werden gleiche bzw. ungleiche Stellen geschrieben.
+             
+
+  main: Test ob args laenge stimmt. args eingabe wird in int ungewandelt. wasBinIch
+        wird mit Integer.toBinaryString aufgerufen.
+        Zahl wird ausgegeben.
