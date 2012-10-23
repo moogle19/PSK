@@ -58,26 +58,52 @@ Aufgabe 3:
   S3        0              S1             r
   S3        1              S4             r
 
-  S4        0              S1             r
-  S4        1              S5             r
+  S4        0              S5             lll
+  S4        1              S0             r
 
-  S5        0              S6             lll
-  S5        1              S0             r
-
-  S6
+  S5
 
 
 
 Aufgabe 4:
-  verl: Bekommt String und macht ihn l-lang. Es werden führend Nullen eingesetzt.
+	verl: 		Bekommt String und macht ihn l-lang. Es werden fuehrend Nullen eingesetzt.
 
-  wasBinIch: 2 Strings werden verglichen. Er werden beide mit "verl" auf die gleiche 
-             Laenge gebracht. Danach buchstabenweise verglichen.
-             Im neuen String werden gleiche bzw. ungleiche Stellen geschrieben:
-             0 wenn die Ziffer gleich ist, 1 sonst. (Bitweise XOR Verknüpfung)
+	wasBinIch:	2 Strings werden verglichen. Er werden beide mit "verl" auf die gleiche 
+           		Laenge gebracht. Danach buchstabenweise verglichen.
+           		Im neuen String werden gleiche bzw. ungleiche Stellen geschrieben:
+           		0 wenn die Ziffer gleich ist, 1 sonst. (Bitweise XOR Verknüpfung)
              
-
-  main: Test ob args laenge stimmt. args eingabe wird in int ungewandelt. wasBinIch
-        wird mit Integer.toBinaryString (Binaerdarstellung der Integer Zahlen) aufgerufen.
-        Die Zahl, also die Bitweise XOR-Verknüpfung der beiden eingegebenen Intgers, wird ausgegeben.
-        => Die Berechnung entspricht " a^b " bei zwei integer Eingaben a und b.
+	main: 		Test ob args laenge stimmt. args eingabe wird in int ungewandelt. wasBinIch
+				wird mit Integer.toBinaryString (Binaerdarstellung der Integer Zahlen) aufgerufen.
+        		Die Zahl, also die Bitweise XOR-Verknuepfung der beiden eingegebenen Intgers, wird ausgegeben.
+        		=> Die Berechnung entspricht " a^b " bei zwei integer Eingaben a und b.
+		
+	
+	
+	main(String[] args):
+			25/26	init von Variablen
+			27-29	Pruefung ob Programm mit mindestens 2 Parametern aufgerufen wird
+			30-32	Parameter werden in int umgewandelt und ich Variablen geschrieben
+			33		wasBinIch() wird aufgerufen mit den beiden int-Variablen welche jedoch vorher zu BinaryStrings umgewandelt werden:
+					
+					wasBinIch(String s1, String s2):
+						12-14	Variablen werden initalisiert
+						15/16	Test ob uebergebene Variablen s1 und s2 gleich lang sind, 
+								ansonsten wird mit der kuerzeren und der Laenge der Laengeren verl() aufgerufen.
+								Rückgabe wird in jeweilige Variable gespeichert.
+								
+								verl(String s, int l):
+									5/6	init von Variablen
+									7	Differenz zwischen uebergebenem int(Ziellaenge) und Stringlaenge wird ermittelt und gespeichert
+									8	Fuehrende Nullen werden in Ausgabe char-Array geschrieben
+									9	Eingangsstring wird angehaengt
+									10	char-Array wird als String zurueckgegeben
+						
+						17		neues char-Array s mit Laenge von s1 wird erstellt	
+						18-21	s1 und s2 werden zeichenweise verglichen. 
+								Wenn die Zeichen nicht gleich sind wird an gleiche Stelle in s eine 1 eingefuegt ansonsten eine 0.
+						22		s wird als String zurueckgegeben
+			
+			34		Ergebnis auch wasBinIch wird ausgegeben
+			35-39	Exception-Handling	
+									
