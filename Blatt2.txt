@@ -44,26 +44,28 @@ public class Main
 
 
 Aufgabe 3:
-  Zustand:  geles.Symbol   neuer Zustand  Kopfbewegung
+	Zustand:	geles.Symbol	neuer Zustand	Kopfbewegung
   
-  S0        0              S1             r
-  S0        1              S0             r
+  	S0    	    0				S1          	r
+  	S0        	1              	S0            	r
 
-  S1        0              S1             r
-  S1        1              S2             r
+	S1      	0              	S1             	r
+	S1        	1              	S2             	r
 
-  S2        0              S1             r
-  S2        1              S3             r
+	S2        	0              	S1             	r
+	S2        	1              	S3             	r
 
-  S3        0              S1             r
-  S3        1              S4             r
+	S3        	0              	S1             	r
+	S3        	1              	S4             	r
 
-  S4        0              S5             lll
-  S4        1              S0             r
+	S4        	0              	S5             	l
+	S4        	1              	S0             	r
 
-  S5
+	S5			x			   	S6			  	l
+  
+	S6			x			   	S7			  	l
 
-
+	S7			...
 
 Aufgabe 4:
 	verl: 		Bekommt String und macht ihn l-lang. Es werden fuehrend Nullen eingesetzt.
