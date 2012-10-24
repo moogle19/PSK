@@ -1,7 +1,7 @@
 ARBEITSBLATT 2
 
 Valentin Bruder  	vbruder@uos.de		942067
-Kevin Seidel		  keseidel@uos.de		943147
+Kevin Seidel		keseidel@uos.de		943147
 
 
 
@@ -61,9 +61,9 @@ Aufgabe 3:
 	S4        	0              	S5             	l
 	S4        	1              	S0             	r
 
-	S5			x			   	S6			  	l
+	S5		x	   	S6		l
   
-	S6			x			   	S7			  	l
+	S6		x	   	S7		l
 
 	S7			...
 
