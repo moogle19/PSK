@@ -2,29 +2,30 @@ Aufgabe 1:
 	
 Aufgabe 2:
 	Vorteile:	Portabilitaet (write once - run everywhere)
-				Systemnah
+			Fehler werden tlw. vor Interpretation erkannt
 	
 	Nachteile:	langsamer da nicht Systemnah
 				läuft in Virtueller Maschine
+			keine Codeoptimierung
 				
 Aufgabe 3:
-	ZAHL
-	3-2-1-meins
-	15,03
-	\xA3
-	FLOATP
-	STRING
-	DREI10
-	4*3
+	ZAHL		-	Symbol
+	3-2-1-meins	-	fehlerhafter Ausdruck
+	15,03		-	fehlerhafter Ausdruck
+	\xA3		-	Symbol
+	FLOATP		-	Symbol
+	STRING		-	Symbol
+	DREI10		-	Symbol
+	4*3		-	fehlerhafter Ausdruck
 	66/4		-	Zahl Rational
 	-33/11		-	Zahl Rational
 
 	
 Aufgabe 4:
-	(+ 1 2 3 4 5 6 7 8 9) = 45
-	(+ -1 (- 3 1)) = 1
-	(- (+ 3 5) (* 2 4) (/ 12 9)) = -4/3
-	(- (+ 3.0 5) (* 2 4) (/ 7 2)) = -3.5
+	(+ 1 2 3 4 5 6 7 8 9) 		= 45
+	(+ -1 (- 3 1)) 			= 1
+	(- (+ 3 5) (* 2 4) (/ 12 9))	= -4/3
+	(- (+ 3.0 5) (* 2 4) (/ 7 2)) 	= -3.5
 	
 Aufgabe 5:
 	1.
