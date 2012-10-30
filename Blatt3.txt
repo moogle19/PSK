@@ -8,6 +8,17 @@ Aufgabe 2:
 				läuft in Virtueller Maschine
 				
 Aufgabe 3:
+	ZAHL
+	3-2-1-meins
+	15,03
+	\xA3
+	FLOATP
+	STRING
+	DREI10
+	4*3
+	66/4		-	Zahl Rational
+	-33/11		-	Zahl Rational
+
 	
 Aufgabe 4:
 	(+ 1 2 3 4 5 6 7 8 9) = 45
