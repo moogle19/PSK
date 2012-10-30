@@ -1,0 +1,28 @@
+Aufgabe 1: 
+	
+Aufgabe 2:
+	Vorteile:	Portabilitaet (write once - run everywhere)
+				Systemnah
+	
+	Nachteile:	langsamer da nicht Systemnah
+				läuft in Virtueller Maschine
+				
+Aufgabe 3:
+	
+Aufgabe 4:
+	(+ 1 2 3 4 5 6 7 8 9) = 45
+	(+ -1 (- 3 1)) = 1
+	(- (+ 3 5) (* 2 4) (/ 12 9)) = -4/3
+	(- (+ 3.0 5) (* 2 4) (/ 7 2)) = -3.5
+	
+Aufgabe 5:
+	1.
+		(ATOM ()) = T (true)
+		(ODDP 5) = T
+		(SYMBOLP 6) = NIL (false)
+		(EQUAL 3 3.0) = NIL
+		(NOT (NOT T)) = T
+	
+	2.
+		(NUMBERP (SYMBOLP X)) == (NUMBERP (SYMBOLP ())) = NIL
+	
