@@ -1,13 +1,39 @@
 Aufgabe 1: 
+a)
+	5: int hilf nicht initialisiert (warning vom Kompiler) (wenn hilf = 0 bei Ausführung Arithmetic Error da durch 0 geteilt wird)
+	9: ergbnis() nicht static (Kompiler)
+	11: while-Schleife wird nicht ausgeführt da Statment falsch (statt && muss ||) (wird nicht vom Kompiler gefunden) 
+		und eine Klammer fehlt (Kompiler)
+	14: Falsche Anordnung von Anführungszeichen ( "Zwischenschritt: x = " + x + "y = " + y )(Kompiler)
+	18: String() muss String[] (Kompiler)
+	29: static-Reference to non-static method (siehe 9) (Kompiler)
+	32: schließende Klammer fehlt (}) (Kompiler)
+
+b)
+	Das Programm nähert die Wurzel der eingegebenen Zahl an.
+	
+	
 	
 Aufgabe 2:
 	Vorteile:	Portabilitaet (write once - run everywhere)
 				Systemnah
+				Programmierfehler werden schneller erkannt
 	
 	Nachteile:	langsamer da nicht Systemnah
 				läuft in Virtueller Maschine
 				
 Aufgabe 3:
+	ZAHL		Symbol
+	3-2-1-meins	kein Ausdruck (clisp: Symbol)
+	15,03		kein Ausdruck
+	-25			Zahl(Integer)
+	\xA3		kein Ausdruck (clisp:Symbol)
+	FLOATP		Symbol
+	STRING 		Symbol
+	DREI10		Symbol
+	4*3			kein Ausdruck (clisp: Symbol)
+	66/4 		Zahl(Rational)
+	-33/11		Zahl(Rational) (clisp: Integer)
 	
 Aufgabe 4:
 	(+ 1 2 3 4 5 6 7 8 9) = 45
