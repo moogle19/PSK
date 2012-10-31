@@ -15,23 +15,23 @@ b)
 	
 	
 Aufgabe 2:
-	Vorteile:	Portabilitaet (write once - run everywhere)
-			Programmierfehler werden schneller erkannt
+	Vorteile:   Portabilitaet (write once - run everywhere)
+			    Programmierfehler werden schneller erkannt
 	
 	Nachteile:	langsamer da nicht Systemnah
-			läuft in Virtueller Maschine
-			keine Codeoptimierung
+			    läuft in Virtueller Maschine
+			    keine Codeoptimierung
 				
 Aufgabe 3:
 	ZAHL		Symbol
 	3-2-1-meins	kein Ausdruck (clisp: Symbol)
 	15,03		kein Ausdruck
-	-25		Zahl(Integer)
+	-25		    Zahl(Integer)
 	\xA3		kein Ausdruck (clisp:Symbol)
 	FLOATP		Symbol
 	STRING 		Symbol
 	DREI10		Symbol
-	4*3		kein Ausdruck (clisp: Symbol)
+	4*3		    kein Ausdruck (clisp: Symbol)
 	66/4 		Zahl(Rational)
 	
 Aufgabe 4:
