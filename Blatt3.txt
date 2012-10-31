@@ -21,6 +21,7 @@ Aufgabe 2:
 	
 	Nachteile:	langsamer da nicht Systemnah
 				läuft in Virtueller Maschine
+			keine Codeoptimierung
 				
 Aufgabe 3:
 	ZAHL		Symbol
@@ -33,13 +34,12 @@ Aufgabe 3:
 	DREI10		Symbol
 	4*3			kein Ausdruck (clisp: Symbol)
 	66/4 		Zahl(Rational)
-	-33/11		Zahl(Rational) (clisp: Integer)
 	
 Aufgabe 4:
-	(+ 1 2 3 4 5 6 7 8 9) = 45
-	(+ -1 (- 3 1)) = 1
-	(- (+ 3 5) (* 2 4) (/ 12 9)) = -4/3
-	(- (+ 3.0 5) (* 2 4) (/ 7 2)) = -3.5
+	(+ 1 2 3 4 5 6 7 8 9) 		= 45
+	(+ -1 (- 3 1)) 			= 1
+	(- (+ 3 5) (* 2 4) (/ 12 9))	= -4/3
+	(- (+ 3.0 5) (* 2 4) (/ 7 2)) 	= -3.5
 	
 Aufgabe 5:
 	1.
