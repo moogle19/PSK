@@ -1,0 +1,8 @@
+(defun transpm (mat)
+  (setf dim (array-dimensions mat))
+  (setf newm (make-array (list (second dim) (first dim))))
+  (dotimes (zeile (first dim) newmat)
+           (dotimes (spalte (second dim))
+                    (setf (aref newmat spalte zeile) (aref mat zeile spalte))
+) )
+)
