@@ -1,4 +1,4 @@
-program aufg5; //identifier missing (syntax)
+program aufg5; //identifier missing or remove bracket (syntax)
 
 const min=4; {point has to be removed because i is integer (compile)}
 
