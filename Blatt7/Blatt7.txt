@@ -7,16 +7,16 @@
 7.4
 
 	1. 	var x1: boolean;
-		var x2: boolean;
-		var x3: longint;
+		var x2: boolean;    
+		var x3: integer;
 
-	2.	var x4,x5: TOrdinal (kein gleitkomma (ganze zahlen + boolean));
+	2.	var x4,x5: boolean, integer
 
 	3. 	var x6: boolean;
-		var x7: extended (integer, longint..)
-		var x8: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		var x7: integer (wegen chr)
+		var x8: integer
 
-	4.	var x9: gleitkomma
-		var x10: TOrdinal
-		var x11: extended (alles, kein bool)
-		var x12: extended (alles, kein bool)
+	4.	var x9: real
+		var x10: integer
+		var x11: integer, real (alles, kein bool)
+		var x12: integer, real (alles, kein bool)
