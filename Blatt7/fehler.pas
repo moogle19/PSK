@@ -1,8 +1,8 @@
 program aufg5(output); //identifier missing (syntax)
 
-const min=10; //point has to be removed because i is integer (compile) 
+const min=4; //point has to be removed because i is integer (compile) 
 
-      max = 4; 
+      max = 10; //min and max have to be switched
 
 var   wahr:boolean; //boolean not bool (syntax)
 
@@ -31,7 +31,7 @@ for i:=min to max do
 
                         begin 
 
-                        write( j,' c '); 
+                        write( j,' ',c,' '); //apostrophes need to be removed
 
                         temp:= temp div j; 
 
