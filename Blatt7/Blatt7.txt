@@ -1,0 +1,22 @@
+7.1
+	siehe Datei!
+7.2
+	Die Typprüfung findet bei dynamischer Typbindung erst zur Laufzeit und nicht zur Compilezeit statt.
+7.3
+	siehe Datei!
+7.4
+
+	1. 	var x1: boolean;
+		var x2: boolean;
+		var x3: longint;
+
+	2.	var x4,x5: TOrdinal (kein gleitkomma (ganze zahlen + boolean));
+
+	3. 	var x6: boolean;
+		var x7: extended (integer, longint..)
+		var x8: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+	4.	var x9: gleitkomma
+		var x10: TOrdinal
+		var x11: extended (alles, kein bool)
+		var x12: extended (alles, kein bool)
