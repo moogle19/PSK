@@ -1,12 +1,12 @@
-program aufg5(output); //identifier missing (syntax)
+program aufg5; //identifier missing (syntax)
 
 const min=4; {point has to be removed because i is integer (compile)}
 
       max = 10; {min and max have to be switched (no real error (runtime))}
 
-var   wahr:boolean; {boolean not bool (syntax)}
+var   wahr:boolean; {boolean not bool (lexical)}
 
-      i,j,temp:integer; {j was not declared}
+      i,j,temp:integer; {j was not declared (semantic)}
 
       c:char; 
 
@@ -19,7 +19,7 @@ for i:=min to max do
         begin 
 
         temp:= i; 
-        wahr:= true; {wahr must be initialized (compile)}
+        wahr:= true; {wahr must be initialized (semantic)}
 
         write(i ,' = '); 
 
@@ -27,11 +27,11 @@ for i:=min to max do
 
                 begin 
 
-                    while (temp mod j = 0) and (temp <> 1)=wahr do {!= in pascal <> (syntax)}
+                    while (temp mod j = 0) and (temp <> 1)=wahr do {!= in pascal <> (lexical)}
 
                         begin 
 
-                            write( j,' ',c,' '); {apostrophes need to be removed (no error)}
+                            write( j,' ',c,' '); {apostrophes need to be removed (no error) but wrong output}
 
                         temp:= temp div j; 
 
@@ -43,4 +43,4 @@ for i:=min to max do
 
         end;
         
-end. {instead of semicolon (syntax)}
+end. {point instead of semicolon (lexical)}
