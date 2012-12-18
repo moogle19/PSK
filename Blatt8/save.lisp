@@ -1,0 +1,5 @@
+(defun save (filename struct)
+	(with-open-file(stream filename :direction :output :if-exists :append :if-does-not-exist :create)
+	(prin1 struct stream)
+)
+)

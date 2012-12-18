@@ -1,0 +1,14 @@
+2.
+    3.
+        Mögliche Objekte: Kunde, Karte, Musical, Tag, Zeitraum, Platzkategorie, Preis, Aufführung, Personenzahl, Sitzplätze, Name, Anschrift, Reservierung, Reservierungsnummer, Gesamtpreis, Konto
+        
+        Objekte: Kunde, Karte, Musical, Aufführung, Platzkategorie, Sitzplätze, Reservierung, Konto
+        
+        Kunde (Name, Anschrift)
+        Karte (Musical, Platzkategorie, Sitzplatz)
+        Musical (Name)
+        Aufführung (Muscial, Tag, Sitzplätze)
+        Platzkategorie (Preis)
+        Sitzplätze (Platz 1 - N, Platzkategorie)
+        Resverierung (Kunde, Karte(n), Reservierungsnummer, Gesamtpreis)
+        Konto (Kontodaten)
