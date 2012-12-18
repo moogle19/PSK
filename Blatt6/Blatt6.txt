@@ -1,0 +1,150 @@
+6.1
+	(defun matmulmat (mat1 mat2)
+	(setf d1 (array-dimensions mat1))	;get list with mat-dimensions
+	(setf d2 (array-dimensions mat2))
+	(setf emat (make-array (list (first d1) (second d2)) :initial-element 0)) ;make new nxm mat (n = first dim of mat1, m = second dim of mat2)
+	(if (not (= (second d1) (first d2))) ; check if dimensions are correct
+		(error "Dimensions are not right!")
+		(dotimes (spalte (second d2)) ;go through all rows in d2
+			(dotimes (zeile (first d1)) ;go through all lines in d1
+				(setf (aref emat zeile spalte) ;ref to emat matrix
+					(do ((i 0 (+ i 1)) (sum 0))
+						(setf sum (+ sum (* (aref mat1 zeile i)
+						                (aref mat2 i spalte))))
+					)
+				)
+			)
+		)
+	)
+)
+
+6.2
+	1.
+		(defun quadmatp (mat)
+		(setf dim (array-dimensions mat))
+		(equal (fist dim) (second dim))
+		)
+
+	2.
+		(defun ematp (mat)
+			(setf err 0)
+			(if (not (quadmatp mat)) (error "Dimensions are wrong") 
+				(setf dim (array-dimensions mat))
+				(setf d (first dim))
+				(dotimes (i d)
+					(dotimes (j d)
+						(setf value (aref mat i j))
+						(if (= i j)
+							(if (not (= value 1))
+								(setf err 1)
+							)
+							(if (not (= value 0))
+								(setf err 1)
+							)
+						)
+					)
+				)
+				(if (= err 1)
+					NIL T
+				)
+
+			)
+		)
+
+	3.
+	(defun transpm (mat)
+	  	(setf dim (array-dimensions mat))
+	  	(setf newmat (make-array (list (second dim) (first dim))))
+	  	(dotimes (zeile (first dim) newmat)
+	    	(dotimes (spalte (second dim))
+	        	(setf (aref newmat spalte zeile) (aref mat zeile spalte))
+			) 
+		)
+	)
+
+	4.
+	(defun orthom (mat)
+  		(ematp (matmulmat mat (transpm mat)))
+	)
+
+6.3
+	(defstruct student
+		matrikel
+		vorname
+		nachname
+		fach
+		geschlecht)
+			
+	(defun save (filename s)
+		(with-open-file(stream filename :direction :output :if-exists :append :if-does-not-exists :create)
+			(format stream "~A ~A ~A ~A ~A ~%" 	(student-matrikel s)
+												(student-vorname s)
+												(student-nachname s)
+												(student-fach s)
+												(student-geschlecht s))
+		)
+	)
+
+	(defun loadstudis (filename)
+		(let ((stream (open filename :if-does-not-exist nil))
+			  (liste (list '0))
+			 )
+			(when stream
+				(loop for line = (read-line stream nil)
+					while line do (push (format t "~a~%" line) liste)
+				)
+				(close stream)
+			)
+		)
+	)
+
+	(defun test (filename)
+		
+		(save filename
+			 (make-student :matrikel "100000" :vorname "Horst" :nachname "Striebeck" :fach "Informatik" :geschlecht "m")
+		)
+		(save filename
+			 (make-student :matrikel "120000" :vorname "Imke" :nachname "Fischer" :fach "Informatik" :geschlecht "w")
+		)
+		(save filename
+			 (make-student :matrikel "123000" :vorname "Frauke" :nachname "Mueller" :fach "Informatik" :geschlecht "w")
+		)
+		(save filename
+			 (make-student :matrikel "123400" :vorname "Wibke" :nachname "Zur" :fach "Mathe" :geschlecht "w")
+		)
+		(save filename
+			 (make-student :matrikel "123450" :vorname "Hans" :nachname "Bauer" :fach "Bio" :geschlecht "m")
+		)
+		(save filename
+			 (make-student :matrikel "123456" :vorname "Klaus" :nachname "Affe" :fach "Informatik" :geschlecht "m")
+		)
+		(save filename
+			 (make-student :matrikel "123001" :vorname "Schantall" :nachname "Fischer" :fach "Kosmetologie" :geschlecht "w")
+		)
+		(save filename
+			 (make-student :matrikel "123400" :vorname "Lisa" :nachname "Zur" :fach "Mathe" :geschlecht "w")
+		)
+		(save filename
+			 (make-student :matrikel "123450" :vorname "Dietrich" :nachname "Bauer" :fach "Bio" :geschlecht "m")
+		)
+		(save filename
+			 (make-student :matrikel "123456" :vorname "Rolf" :nachname "Affe" :fach "Informatik" :geschlecht "m")
+		)
+		
+		(print (loadstudis filename))
+	)
+
+	(defun GeschlechtFach (fach filename)
+		(setf m 0)
+		(setf w 0)
+		(setf studilist loadstudis(filename))
+		(loop for x in studilist
+			(if (eq (cdddar x) fach)
+				(if (eq (cddddar x) "m")
+					(setf m (+ m 1))
+					(setf w (+ w 1))
+				)
+			)
+		)
+		(format T "Es gibt ~D weibliche und ~D männliche Studenten" w m)
+	)

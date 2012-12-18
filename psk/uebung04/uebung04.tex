@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+
+% \usepackage{listings}
+\usepackage{minted}
+
+% \lstset{language = Lisp}
+% \lstset{identifierstyle = \ttfamily}
+% \lstset{showstringspaces = false}
+
+\title{4. Übungsblatt zu Programmiersprachenkonzepte}
+\author{Manuel Schwarz, Michael Stypa}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabe 4.1}
+\begin{enumerate}
+  \item \mintinline[]{common-lisp}
+        @(FIRST (REST (REST '((A B C) (D E F))))) = NIL@ \\
+        \mintinline[]{common-lisp}@(REST '((A B C) (D E F)))@ liefert eine
+        Liste mit einem einzelnen Element.
+        Diese besitzt keinen Dekrement-Teil.
+  \item \mintinline[]{common-lisp}
+        @(REST (REST (FIRST '((A B (C D)) (E F))))) = ((C D))@
+  \item \mintinline[]{common-lisp}
+        @(REST (REST '((1 2) (3 4) (5 6)))) = ((5 6))@ \\
+        Dies funktioniert im Gegensatz zu 1. weil die Ursprungsliste
+        \mintinline[]{common-lisp}@'((1 2) (3 4) (5 6))@ drei Elemente besitzt.
+  \item \mintinline[]{common-lisp}@(REST (FIRST ((A (B C)) (D E)))) = Fehler@ \\
+        \mintinline[]{common-lisp}@A@ ist keine Funktion.
+  \item \mintinline[]{common-lisp}
+        @(REST (FIRST (FIRST '(((A B) (C D)) (E F))))) = (B)@
+  \item \mintinline[]{common-lisp}
+        @(REST (FIRST (FIRST '((A B (C D)) (E F))))) = Fehler@ \\
+        \mintinline[]{common-lisp}@A@ besitzt keinen Dekrement-Teil.
+\end{enumerate}
+
+\subsection*{Aufgabe 4.2}
+\begin{minted}{common-lisp}
+(define unknown 
+  (lambda (ex1 ex2 ex3)
+    (cond ((atom ex3) (cond ((eq ex2 ex3) ex1) (T ex3)))
+          (T (cons (unknown ex1 ex2 (car ex3))
+                   (unknown ex1 ex2 (cdr ex3)))))))
+\end{minted}
+Die Funktion unknown ist eine Art replace-Funktion. Ist \texttt{ex2} kein Atom,
+so wird einfach \texttt{ex3} zurückgegeben. Der Grund hierfür ist, dass
+\texttt{ex3} solange in Kopf (\texttt{FIRST}) und \texttt{REST} geteilt wird,
+bis \texttt{ex3} ein Atom ist. Dieses Atom wird dann entsprechend zurückgegeben
+und rekursiv zu einer neuen Liste (\texttt{CONS}) hinzugefügt.\\
+Ist \texttt{ex2} nun aber ein Atom und enthält (die Liste) \texttt{ex3} nun
+Atome für die gilt  \texttt{ex3 == ex2}, dann werden diese durch  \texttt{ex1}
+ersetzt.\\
+
+\subsubsection*{Beispiele:}
+\begin{minted}{common-lisp}
+[1]> (unknown '(1 2 3) '(4 5 6) '(7 8 9))
+(7 8 9)
+[2]> (unknown '(1 2 3) 8 '(7 8 9))
+(7 (1 2 3) 9)
+[3]> (unknown '(1 2 3) 8 '(4 8 7 8 9))
+(4 (1 2 3) 7 (1 2 3) 9)
+\end{minted}
+
+\subsection*{Aufgabe 4.3}
+\inputminted[]{common-lisp}{kreis.lisp}
+
+\subsection*{Aufgabe 4.4}
+\inputminted[]{common-lisp}{mylast.lisp}
+\inputminted[]{common-lisp}{mylastlist.lisp}
+
+\end{document}
+
+

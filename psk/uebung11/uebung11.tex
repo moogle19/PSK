@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[ngerman]{babel}
+
+\usepackage{minted}
+
+\title{11. Übungsblatt zu Programmiersprachenkonzepte}
+\author{Manuel Schwarz, Michael Stypa}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabe 11.1}
+\begin{itemize}
+  \item[\emph{Unifikation}]
+    Gegeben zwei prädikatenlogische \emph{Aussagen} $A_1 = (X, Y, f(b))$ und
+    $A_2 = (a, b, Z)$ mit \emph{Atomen} $a$ und $b$ und Variablen $X$, $Y$ und
+    $Z$.\emph{Unifikation} formt Aussagen mit Hilfe der \emph{Substitution} so
+    um, dass diese gleich aussehen. Ersetzt man in $A_1$ nun $X$ durch $a$ und
+    $Y$ durch $b$ und in $A_2$ $Z$ durch $f(b)$ so erhält man zwei gleiche
+    \emph{Aussagen}.
+  \item[\emph{Backtracking}]
+    Die \emph{Suche} nach einer \emph{Lösung} kann in Einzelschritte unterteilt
+    werden. In jedem Schritt gibt es die Möglichkeit mit unterschiedlichen
+    Folgeschritten fortzufahren. Stellt man zu einem Zeitpunkt fest, dass der
+    Aktuelle Weg nicht zur Lösung führt so geht man die gewählten Schritte
+    rückwärts und wählt einen anderen Weg. Dieses Suchverfahren lässt sich
+    anschaulich in einer Baum-Struktur darstellen und man bezeichnet es als
+    \emph{Backtracking}.
+\end{itemize}
+
+\subsection*{Aufgabe 11.2}
+\mintinline{prolog}@...@
+\inputminted[firstline=58, firstnumber=58, linenos=true]{prolog}{verwandte.pl}
+
+\subsection*{Aufgabe 11.3}
+\inputminted[linenos=true]{prolog}{laenge.pl}
+
+\subsection*{Aufgabe 11.4}
+\inputminted[linenos=true, firstnumber=12]{prolog}{reise.pl}
+
+\end{document}

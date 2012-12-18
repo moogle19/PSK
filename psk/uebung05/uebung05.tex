@@ -1,0 +1,83 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+
+\usepackage{minted}
+\title{5. Übungsblatt zu Programmiersprachenkonzepte}
+\author{Manuel Schwarz, Michael Stypa}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabe 5.1}
+\inputminted{common-lisp}{myreverse.lisp}
+
+\subsection*{Aufgabe 5.2}
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+      \item \mintinline[]{common-lisp}
+            @(format T "Das Wort heisst ~S." "LISP")@
+            \begin{minted}{common-lisp}
+Das Wort heisst "LISP".
+NIL
+            \end{minted}
+      \item \mintinline[]{common-lisp}
+            @(format T "Das Symbol ist ~&~A." "LISP")@
+            \begin{minted}{common-lisp}
+Das Wort heisst
+LISP.
+NIL
+            \end{minted}
+      \item \mintinline[]{common-lisp}
+            @(format T "Die Formatierung ~~S erzeugt diese ~A." 'Ausgabe)@
+            \begin{minted}{common-lisp}
+Die Formatierung ~S erzeugt diese AUSGABE.
+NIL
+            \end{minted}
+      \item \mintinline[]{common-lisp}
+            @(format T "Die Formatierung ~~~S sieht anders aus." A)@ \\
+            Bei uninitialisiertem A: Fehler \smallskip \\
+            Sonst:
+            \begin{minted}{common-lisp}
+Die Formatierung ~INHALT sieht anders aus.
+NIL
+            \end{minted}
+    \end{enumerate}
+  \item \mintinline[]{common-lisp}
+        @(format t "Laenge: ~9,2f~%Breite: ~9,2f@ \\
+        \mintinline[]{common-lisp}
+        @  ~%Hoehe: ~9,2f~%" "22.34" "134.20" "1.0")@
+\end{enumerate}
+
+(format t "Laenge: ~9,2f~%Breite: ~9,2f~%Hoehe: ~9,2f~%" "22.34" "134.20" "1.0")
+
+\subsection*{Aufgabe 5.3}
+\inputminted{common-lisp}{durchschnitt.lisp}
+
+\newpage
+
+\subsection*{Aufgabe 5.4}
+\inputminted[linenos]{common-lisp}{aufg_4.lisp}
+
+Die Funktion \mintinline[]{common-lisp}@xxx@ bekommt eine Liste übergeben
+und prüft, ob zweimal hintereinander das gleiche Element aufgeführt wird.
+Ist dies der Fall,
+so wird alles (der Rest) nach dem ersten doppelten Element zurückgegeben.
+Gibt es so eine Dopplung nicht, so wird NIL zurückgegeben.\\
+\\
+Beispiel:\\ 
+\mintinline[]{common-lisp}@(xxx '(1 2 3 4 5)) = NIL@ \\
+\mintinline[]{common-lisp}@(xxx '(1 2 3 3 4 5)) = (4 5)@
+\bigskip \\
+Funktionalität der \mintinline[]{common-lisp}@do@-Funktion (Iteration):\\
+Im ersten Teil wird festgelegt, welche Variablen es gibt, wie ihr Initialwert
+lautet und wie sie zu aktualisieren sind.\\
+Im zweiten Teil wird eine Abbruchbedingung sowie ein return-Wert festgelegt
+und der dritte Teil ist der body der Funktion (der in diesem Fall ebenfalls
+einen return-Wert enthält, welcher jedoch bedingt ist).
+
+\end{document}

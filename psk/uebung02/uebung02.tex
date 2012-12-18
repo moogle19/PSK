@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{ngerman}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumerate}
+\usepackage{listings}
+
+\lstset{language=Java}
+\lstset{identifierstyle=\ttfamily}
+
+\title{2. Übungsblatt zu Programmiersprachenkonzepte}
+\author{Manuel Schwarz, Michael Stypa}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Aufgabe 1}
+\begin{enumerate}[a)]
+  \item partiell, Definitionsbereich:
+        $\begin{aligned} x \in \mathbb{R} \backslash \{0\} \end{aligned}$ 
+  \item total, Definitionsbereich:
+        $\begin{aligned} x \in \mathbb{R} \end{aligned}$
+  \item partiell, Definitionsbereich:
+        $\begin{aligned} x \in \{-2k | k \in \mathbb{N}\cup\{0\}\}
+         \end{aligned}$
+\end{enumerate}
+
+\bigskip
+
+\subsection*{Aufgabe 2}
+Der Java-Compiler wirft trotz des ungewissen Terminierung des Programms weder
+eine Warnung noch einen Fehler.
+\lstinputlisting{userwhile.java}
+\bigskip
+
+\newpage
+
+\subsection*{Aufgabe 3}
+Die Turingmaschine geht solange nach rechts, bis die Sequenz
+\textquotedblleft01110\textquotedblright gefunden wurde
+und fährt dann zurück auf die erste 1.
+
+\vspace{5mm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+
+akt. Zustand & akt. Zeichen & $ \longrightarrow $  & neues Zeichen 
+& neuer Zust. & Lese-, Schreibkopf\\\hline\hline
+  
+$ s_{0}$ & 1 & $ \longrightarrow $ & 1 &$ s_{0} $& r \\\hline
+$ s_{0}$ & 0 &$ \longrightarrow$ & 0 &$ s_{1}$ & r \\\hline
+$ s_{1}$ & 0 &$ \longrightarrow$ & 0 &$ s_{1}$ & r \\\hline
+$ s_{1}$ & 1 &$ \longrightarrow$ & 1 &$ s_{2}$ & r \\\hline
+$ s_{2}$ & 0 &$ \longrightarrow$ & 0 &$ s_{1}$ & r \\\hline
+$ s_{2}$ & 1 &$ \longrightarrow$ & 1 &$ s_{3}$ & r \\\hline
+$ s_{3}$ & 0 &$ \longrightarrow$ & 0 &$ s_{1}$ & r \\\hline
+$ s_{3}$ & 1 &$ \longrightarrow$ & 1 &$ s_{4}$ & r \\\hline
+$ s_{4}$ & 0 &$ \longrightarrow$ & 0 &$ s_{5}$ & l \\\hline
+$ s_{4}$ & 1 &$ \longrightarrow$ & 1 &$ s_{0}$ & r \\\hline
+$ s_{5}$ & 1 &$ \longrightarrow$ & 1 &$ s_{5}$ & l \\\hline
+$ s_{5}$ & 0 &$ \longrightarrow$ & 0 &$ s_{6}$ & r \\\hline
+$ s_{6}$ & 1 &$ \longrightarrow$ & 1 &$ s_{6}$ & - \\\hline
+
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\subsection*{Aufgabe 4}
+Beim Programmstart wird in der Methode \lstinline!main! zuerst auf Vorhandensein
+eines Integer-Parameters geprüft und im Fehlerfall eine Fehlermeldung geworfen
+worauf der Abbruch des Programmes folgt(Zeile 21-23).\\
+Bei korrektem Übergabeparameter durchläuft das Programm einen try-Block. In
+diesem wird der Parameter auf positives Vorzeichen geprüft und im Fehlerfall
+eine Fehlermeldung geworfen worauf der Abbruch des Programmes folgt
+(Zeile 26-29).\\
+In Zeile 32 gibt das Programm eine Meldung aus, welche den Rückgabewert der
+Methode \lstinline!erg!, aufgerufen mit dem Eingabeparameter, seinem kleinsten
+ganzzahligen Teiler und dem Quotienten aus beidem, enthält.\\
+Bei Erscheinen einer Exception wird diese im catch-Block(Zeile 34-36) gefangen,
+der Stack-Trace ausgegeben und das Programm beendet.\\
+\lstinline!private static int teiler (int zahl)! liefert den kleinsten
+ganzzahligen Teiler von \lstinline!zahl!.\\
+\lstinline!private static float erg (int zahl, int a, int b)! liefert die
+Quadratwurzel vom Wert des Parameters \lstinline!zahl!.
+
+\end{document}

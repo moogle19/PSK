@@ -1,0 +1,10 @@
+
+(setf M1 (make-array '(2 3) :initial-element 1))
+(setf M2 (make-array '(3 2) :initial-element 1))
+(setf M3 (make-array '(1 3) :initial-element 1))
+(setf M4 (make-array '(1 2) :initial-element 1))
+(setf M5 (make-array '(2 3) :initial-contents '((1 2 3) (3 2 1))))
+(setf M6 (make-array '(3 2) :initial-contents '((2 6) (4 4) (6 2))))
+(setf M7 (make-array '(2 2) :initial-element 1))
+(setf I  (make-array '(4 4) :initial-contents '((1 0 0 0) (0 1 0 0) (0 0 1 0) (0 0 0 1))))
+(setf rot(make-array '(2 2) :initial-contents '((0.96 -0.28) (0.28 0.96))))
