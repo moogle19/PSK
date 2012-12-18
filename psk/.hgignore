@@ -1,9 +1,0 @@
-syntax: glob
-*~
-*.backup
-*.log
-*.aux
-*.class
-*.DS_Store
-
-uebung02/erg

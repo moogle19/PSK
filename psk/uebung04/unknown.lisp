@@ -1,5 +1,0 @@
-(defun unknown (ex1 ex2 ex3)
-  (cond ((atom ex3) (cond ((eq ex2 ex3) ex1)
-                          (T ex3)))
-        (T (cons (unknown ex1 ex2 (car ex3)) (unknown ex1 ex2 (cdr ex3))))
-))

@@ -1,7 +1,0 @@
-(defun myreverse (l1)
-    (cond ((null l1) nil)
-          ((listp (first l1)) (append (myreverse (rest l1)) 
-                                      (list(myreverse (first l1)))))
-          (T (append (myreverse (rest l1)) (list (first l1))))
-    )
-)
